@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:modeler="http://camunda.org/schema/modeler/1.0" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="Definitions_0bavkgj" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.1.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.17.0">
+  <decision id="car" name="Car Type">
+    <decisionTable id="DecisionTable_0sh4t60" hitPolicy="FIRST">
+      <input id="Input_1" label="Age">
+        <inputExpression id="InputExpression_1" typeRef="integer">
+          <text>age</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1br4dza" label="Driving experience">
+        <inputExpression id="LiteralExpression_1rbsabd" typeRef="double">
+          <text>drivingExperience</text>
+        </inputExpression>
+      </input>
+      <output id="Output_1" label="Model Car" name="model" typeRef="string" biodi:width="192" />
+      <rule id="DecisionRule_0qawi8r">
+        <inputEntry id="UnaryTests_18edmwn">
+          <text>18</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ha4vbz">
+          <text>0</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_03oxxef">
+          <text>"Nissan Leaf"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_04xsrzh">
+        <inputEntry id="UnaryTests_12snicb">
+          <text>&gt;18</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0591mzv">
+          <text>[0..2]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_13xt2ej">
+          <text>"Tesla Model 3"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0psnr2h">
+        <inputEntry id="UnaryTests_08ywa7b">
+          <text>[19..20]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1o196cn">
+          <text>&gt;=1</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1csvrjn">
+          <text>"Tesla Model Y"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1ujhs71">
+        <inputEntry id="UnaryTests_1jam53e">
+          <text>&gt;=21</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1lyqeu7">
+          <text>&gt;=2</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_14h0jqc">
+          <text>"Tesla Model S"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0ss8z0n">
+        <inputEntry id="UnaryTests_1449y5x">
+          <text>&lt;18</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0y72b0w">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1itw876">
+          <text>"Error"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <decision id="bike" name="Bike Type">
+    <decisionTable id="DecisionTable_1m5wflc" hitPolicy="FIRST">
+      <input id="InputClause_15frssz" label="Age" biodi:width="192">
+        <inputExpression id="LiteralExpression_1b9hgzu" typeRef="integer">
+          <text>age</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0a9tduf" label="Driving experience">
+        <inputExpression id="LiteralExpression_1a5ljj8" typeRef="double">
+          <text>drivingExperience</text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_1kqq95e" label="Model Bike" name="model" typeRef="string" biodi:width="192" />
+      <rule id="DecisionRule_11a8tt3">
+        <inputEntry id="UnaryTests_0bbvpxp">
+          <text>&gt;=16</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0iz4lem">
+          <text>[0..1]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0mf4c6v">
+          <text>"E-scooter"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1l2x7nz">
+        <inputEntry id="UnaryTests_048f2p8">
+          <text>&gt;=18</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1psxwum">
+          <text>&gt;=2</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_12mssoi">
+          <text>"Phatty"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_16iqu3y">
+        <inputEntry id="UnaryTests_1dw76zx">
+          <text>&gt;=20</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0n17wfa">
+          <text>&gt;=3</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1acvntd">
+          <text>"RACCEWAY E-FICHTL"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1o01cdu">
+        <inputEntry id="UnaryTests_12nwix9">
+          <text>&lt;16</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0g333s8">
+          <text>&lt;1</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1shrymc">
+          <text>"Error"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <decision id="scooter" name="Scooter Type">
+    <decisionTable id="DecisionTable_0f4vdfd">
+      <input id="InputClause_1dhbf7y" label="Age" biodi:width="192">
+        <inputExpression id="LiteralExpression_1tt0yoe" typeRef="integer">
+          <text>age</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1mx8ijy" label="Driving experience">
+        <inputExpression id="LiteralExpression_1o06zvp" typeRef="double">
+          <text>drivingExperience</text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_1ko27je" label="Model" typeRef="string" />
+      <rule id="DecisionRule_1gmhlrv">
+        <inputEntry id="UnaryTests_000o5je">
+          <text>&gt;=14</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1wsdad4">
+          <text>&gt;0</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0bgxg5k">
+          <text>"Xiaomi S1"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="car">
+        <dc:Bounds height="80" width="180" x="170" y="90" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_195ol6d" dmnElementRef="bike">
+        <dc:Bounds height="80" width="180" x="380" y="90" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_1r03n9x" dmnElementRef="scooter">
+        <dc:Bounds height="80" width="180" x="590" y="90" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>

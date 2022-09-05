@@ -1,0 +1,5 @@
+com\sytoss\camunda_react_web\CamundaReactWebApplication.class
+com\sytoss\camunda_react_web\entity\Employee.class
+com\sytoss\camunda_react_web\repository\EmployeeRepository.class
+com\sytoss\camunda_react_web\preloader\DatabaseLoader.class
+com\sytoss\camunda_react_web\controller\HomeController.class
